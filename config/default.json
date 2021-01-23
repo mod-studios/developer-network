@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://xaviermod:xaviermod@starplan.qwbmt.mongodb.net/starplan?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
+}
