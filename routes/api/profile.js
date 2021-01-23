@@ -141,7 +141,6 @@ router.get('/user/:user_id', async (req, res) => {
 // @desc    Gets all profiles
 // @access  Public
 router.get('/', async (req, res) => {
-
     try {
         const profiles = await Profile.find().populate('user', ['name', 'avatar']);
         res.json(profiles);
@@ -150,7 +149,24 @@ router.get('/', async (req, res) => {
         console.log(err.message);
         res.status(500).send('Server Error')
     }
+})
 
+// @route   DELETE api/profile
+// @desc    Delete profile, user & post
+// @access  Private
+router.delete('/', auth, async (req, res) => {
+    try {
+        // Remove profile
+        await Profile.findOneAndRemove({user: req.user.id});
+        // Remove user
+        await User.findOneAndRemove({_id: req.user.id});
+
+        res.json({msg: 'User removed'});
+
+    } catch(err) {
+        console.log(err.message);
+        res.status(500).send('Server Error')
+    }
 })
 
 module.exports = router;
