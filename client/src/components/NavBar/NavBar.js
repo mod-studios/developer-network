@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Inner from '../../layouts/Inner';
 import Logo from '../Library/Logo';
@@ -21,7 +22,9 @@ const NavBar = () => {
     return (
         <Inner>
             <Wrapper>
-                <Logo width="120px" />
+                <Link to ="/">
+                    <Logo width="120px" />
+                </Link>
                 <NavLinks />
             </Wrapper>
         </Inner>

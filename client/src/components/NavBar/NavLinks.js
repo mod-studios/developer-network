@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import Button from '../Library/Button';
 
@@ -25,13 +26,19 @@ const Wrapper = styled.ul`
 const NavLinks = () => {
     return (
         <Wrapper className="NavLinks">
-            <li>Developers</li>
-            <Button 
-                type="secondary" 
-                body="test" />
-            <Button 
-                type="primary" 
-                body="test" />
+            <Link to="/developers">
+                <li>Developers</li>
+            </Link>
+            <Link to="/login">
+                <Button 
+                    type="secondary" 
+                    body="Sign In" />
+            </Link>
+            <Link to="/signup">
+                <Button 
+                    type="primary" 
+                    body="Join" />
+            </Link>
         </Wrapper>
     )
 }

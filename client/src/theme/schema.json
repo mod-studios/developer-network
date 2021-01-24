@@ -6,16 +6,18 @@
         "colors": {
           "body": "#FFFFFF",
           "text": "#000000",
+          "secondary": "#000000",
           "button": {
             "text": "#FFFFFF",
-            "background": "15, 0, 89"
+            "background": "0, 0, 0"
           },
           "link": {
             "text": "teal",
             "opacity": 1
           }
         },
-        "font": "'Nunito', sans-serif"
+        "font": "'Questrial', sans-serif;",
+        "font_secondary": "'Open Sans', sans-serif;"
       }
     }
   }
